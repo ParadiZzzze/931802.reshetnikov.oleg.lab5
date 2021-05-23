@@ -1,0 +1,33 @@
+﻿@model lab5.Models.DoctorModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="text-left">
+    <h1 style="font-size:35px; color:#333333">Delete</h1>
+    <h4>Doctor</h4>
+    <hr />
+    <div>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Speciality)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Speciality)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Delete" /> |
+            <a asp-action="Index">Back to List</a>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+﻿@model lab5.Models.DoctorModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="text-left">
+    <h1 style="font-size:35px; color:#333333">Create</h1>
+    <h4>Doctor</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Speciality" class="control-label"></label>
+                    <input asp-for="Speciality" class="form-control" />
+                    <span asp-validation-for="Speciality"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
